@@ -27,5 +27,7 @@ dependencies {
     implementation support.design
     implementation support.app_compat
     implementation deps.kotlin_stdlib8
-    implementation project(path: ':ZKUIComponents')
+
+    implementation zkteam.zk_ui
+//    implementation project(path: ':ZKUIComponents')
 }
