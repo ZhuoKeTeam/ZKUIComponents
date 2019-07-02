@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zkteam.ui.components">
+
+    <application>
+        <activity android:name=".TestActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:launchMode="singleTop"/>
+    </application>
+</manifest>
