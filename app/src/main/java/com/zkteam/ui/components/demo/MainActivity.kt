@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.zkteam.ui.components.TestActivity
+import com.zkteam.ui.components.wedgit.ScreenInfoDialog
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
 
         bt.setOnClickListener {
             startActivity(Intent(this, TestActivity::class.java))
+        }
+
+        bt1.setOnClickListener {
+            ScreenInfoDialog().show(this)
         }
 
     }

@@ -6,11 +6,23 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <Button
-            android:id="@+id/bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="跳转到组件中的测试页面"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:id="@+id/bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跳转到组件中的测试页面"/>
+
+        <Button
+                android:id="@+id/bt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="弹出对话框"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
