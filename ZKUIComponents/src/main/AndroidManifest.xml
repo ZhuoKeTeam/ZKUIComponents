@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.zkteam.ui.components">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application>
         <activity android:name=".TestActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:launchMode="singleTop"/>
+        <activity android:name=".webview.ZKWebViewActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:launchMode="singleTop"/>
     </application>

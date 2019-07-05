@@ -1,4 +1,4 @@
-package com.zkteam.ui.components.wedgit
+package com.zkteam.ui.components.widget
 
 import android.app.Dialog
 import android.content.ClipData

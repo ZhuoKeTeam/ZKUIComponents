@@ -17,3 +17,12 @@
 ```
 ScreenInfoDialog().show(this)
 ```
+
+## 调整到默认的 WebView 界面中
+
+```
+private fun startWebViewActivity(url: String) {
+    startActivity(Intent(this, ZKWebViewActivity::class.java)
+        .putExtra(ZKWebViewActivity.FLAG_ZK_UI_WEBVIEW_URL, url))
+}
+```

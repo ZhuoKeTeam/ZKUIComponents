@@ -21,7 +21,19 @@
                 android:id="@+id/bt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="弹出对话框"/>
+                android:text="弹出屏幕信息对话框"/>
+
+        <Button
+                android:id="@+id/bt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="展示 默认WebView"/>
+
+        <Button
+                android:id="@+id/bt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="展示 http://www.baidu.com 的 WebView"/>
 
     </LinearLayout>
 
