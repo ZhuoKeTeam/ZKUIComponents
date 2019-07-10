@@ -28,4 +28,5 @@ dependencies {
     implementation deps.kotlin_stdlib8
 
     api zkteam.zksdk
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

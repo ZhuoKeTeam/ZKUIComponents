@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.zkteam.sdk.ZKManager
-import com.zkteam.ui.components.TestActivity
+import com.zkteam.ui.components.activity.TestActivity
 import com.zkteam.ui.components.webview.ZKWebViewActivity
 import com.zkteam.ui.components.widget.ScreenInfoDialog
 import kotlinx.android.synthetic.main.activity_main.*

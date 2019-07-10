@@ -26,3 +26,15 @@ private fun startWebViewActivity(url: String) {
         .putExtra(ZKWebViewActivity.FLAG_ZK_UI_WEBVIEW_URL, url))
 }
 ```
+
+## SplashActivity 闪屏页面
+
+通过 permissions 数组对象定义需要申请动态的权限 
+
+```
+private String[] permissions = new String[]{Manifest.permission.READ_PHONE_STATE,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE};
+```
+
+**注意：权限同时需要在清单文件中声明**

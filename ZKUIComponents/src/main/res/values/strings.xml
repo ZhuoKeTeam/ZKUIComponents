@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">lib</string>
+    <string name="question_permission_tip">获取权限失败</string>
 </resources>
