@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package androidx.viewpager2.integration.testapp.cards
+package com.zkteam.ui.components.demo.cards
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,5 +1,6 @@
 package com.zkteam.ui.components.notification
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -31,6 +32,7 @@ class NotificationMsgReceiver(clickListener: NotificationItemClickListener) : Br
      *
      * @param context
      */
+    @SuppressLint("WrongConstant")
     fun collapseStatusBar(context: Context) {
         try {
             val statusBarManager = context.getSystemService("statusbar")

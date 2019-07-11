@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.integration.testapp.cards.Card
 import com.zkteam.sdk.base.ZKBaseActivity
+import com.zkteam.ui.components.demo.cards.Card
+import com.zkteam.ui.components.demo.cards.CardView
+import com.zkteam.ui.components.viewpager.ZKFragmentAdapter
 import kotlinx.android.synthetic.main.activity_view_pager.*
 
 class ViewPagerActivity : ZKBaseActivity() {
@@ -16,14 +17,14 @@ class ViewPagerActivity : ZKBaseActivity() {
     }
 
     override fun initData(bundle: Bundle?) {
-
-        vp_view.adapter = object : FragmentStateAdapter(this) {
-            override fun createFragment(position: Int): Fragment {
-                return CardFragment.create(Card.DECK[position])
-            }
-
+        vp_view.adapter = object : ZKFragmentAdapter(this) {
             override fun getItemCount(): Int {
                 return Card.DECK.size
+            }
+
+            override fun createFragment(position: Int): Fragment {
+//                return CardFragment.create(Card.DECK[position])
+                return WQFragment.create(position)
             }
         }
     }
@@ -50,7 +51,7 @@ class ViewPagerActivity : ZKBaseActivity() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            val cardView = androidx.viewpager2.integration.testapp.cards.CardView(layoutInflater, container)
+            val cardView = CardView(layoutInflater, container)
             cardView.bind(Card.fromBundle(arguments!!))
             return cardView.view
         }
@@ -60,7 +61,8 @@ class ViewPagerActivity : ZKBaseActivity() {
             /** Creates a Fragment for a given [Card]  */
             fun create(card: Card): CardFragment {
                 val fragment = CardFragment()
-                fragment.arguments = card.toBundle()
+                val args = Bundle(1)
+                fragment.arguments = args
                 return fragment
             }
         }
