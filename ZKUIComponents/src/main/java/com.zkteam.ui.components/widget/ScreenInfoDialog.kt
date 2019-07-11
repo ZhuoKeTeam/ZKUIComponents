@@ -6,11 +6,11 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
-import android.support.v4.app.FragmentManager
-import android.support.v7.app.AlertDialog
 import android.util.DisplayMetrics
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 import com.blankj.utilcode.util.IntentUtils
 
 
@@ -25,9 +25,10 @@ class ScreenInfoDialog : DialogFragment() {
         return buildDialog(context!!)
     }
 
-    override fun show(manager: FragmentManager?, tag: String?) {
+    override fun show(manager: FragmentManager, tag: String?) {
         show(context!!)
         super.show(manager, tag)
+
     }
 
     fun show(context: Context) {

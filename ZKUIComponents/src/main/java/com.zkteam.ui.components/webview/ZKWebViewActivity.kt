@@ -7,9 +7,9 @@ import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
 import android.view.View
 import android.webkit.*
+import androidx.annotation.RequiresApi
 import com.blankj.utilcode.util.ToastUtils
 import com.zkteam.sdk.ZKBase
 import com.zkteam.sdk.base.ZKBaseActivity

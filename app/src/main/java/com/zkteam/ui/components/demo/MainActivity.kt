@@ -2,7 +2,7 @@ package com.zkteam.ui.components.demo
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.zkteam.sdk.ZKManager
 import com.zkteam.ui.components.activity.TestActivity
 import com.zkteam.ui.components.webview.ZKWebViewActivity
@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         bt3.setOnClickListener {
             startWebViewActivity("https://www.baidu.com")
+        }
+
+        bt4.setOnClickListener {
+            startActivity(Intent(this, ViewPagerActivity::class.java))
         }
 
     }

@@ -1,6 +1,6 @@
 package com.zkteam.ui.components.notification
 
-import android.support.annotation.DrawableRes
+import androidx.annotation.DrawableRes
 import java.io.Serializable
 
 data class ItemDataBean(

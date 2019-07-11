@@ -28,5 +28,6 @@ dependencies {
     implementation deps.kotlin_stdlib8
 
     api zkteam.zksdk
+    api jetpack.viewpager2
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
