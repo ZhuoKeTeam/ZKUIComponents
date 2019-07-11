@@ -1,10 +1,11 @@
-package com.zkteam.ui.components.demo
+package com.zkteam.ui.components.demo.viewpager
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.ColorUtils
 import com.zkteam.sdk.base.ZKBaseFragment
+import com.zkteam.ui.components.demo.R
 import kotlinx.android.synthetic.main.fragment_wq.*
 
 class WQFragment: ZKBaseFragment() {
@@ -12,7 +13,7 @@ class WQFragment: ZKBaseFragment() {
     companion object {
         public const val FLAG_WQ_FRAGMENT_POSITION = "flag_wq_fragment_position"
 
-        fun create(position: Int) :WQFragment {
+        fun create(position: Int) : WQFragment {
             val fragment = WQFragment()
             val args = Bundle()
             args.putInt(FLAG_WQ_FRAGMENT_POSITION, position)

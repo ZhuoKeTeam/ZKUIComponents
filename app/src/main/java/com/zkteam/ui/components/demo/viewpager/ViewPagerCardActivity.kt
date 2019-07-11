@@ -1,4 +1,4 @@
-package com.zkteam.ui.components.demo
+package com.zkteam.ui.components.demo.viewpager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.zkteam.sdk.base.ZKBaseActivity
-import com.zkteam.ui.components.demo.cards.Card
-import com.zkteam.ui.components.demo.cards.CardView
+import com.zkteam.ui.components.demo.R
+import com.zkteam.ui.components.demo.viewpager.cards.Card
+import com.zkteam.ui.components.demo.viewpager.cards.CardView
 import com.zkteam.ui.components.viewpager.ZKFragmentAdapter
 import kotlinx.android.synthetic.main.activity_view_pager.*
 
-class ViewPagerActivity : ZKBaseActivity() {
+class ViewPagerCardActivity : ZKBaseActivity() {
     override fun getLayoutId(): Int {
         return R.layout.activity_view_pager
     }
@@ -23,8 +24,7 @@ class ViewPagerActivity : ZKBaseActivity() {
             }
 
             override fun createFragment(position: Int): Fragment {
-//                return CardFragment.create(Card.DECK[position])
-                return WQFragment.create(position)
+                return CardFragment.create(Card.DECK[position])
             }
         }
     }
@@ -61,8 +61,7 @@ class ViewPagerActivity : ZKBaseActivity() {
             /** Creates a Fragment for a given [Card]  */
             fun create(card: Card): CardFragment {
                 val fragment = CardFragment()
-                val args = Bundle(1)
-                fragment.arguments = args
+                fragment.arguments = card.toBundle()
                 return fragment
             }
         }

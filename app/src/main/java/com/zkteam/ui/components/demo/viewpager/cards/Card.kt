@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zkteam.ui.components.demo.cards
+package com.zkteam.ui.components.demo.viewpager.cards
 
 import android.os.Bundle
 

@@ -1,9 +1,9 @@
 package com.zkteam.ui.components.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.zkteam.ui.components.R;
 
