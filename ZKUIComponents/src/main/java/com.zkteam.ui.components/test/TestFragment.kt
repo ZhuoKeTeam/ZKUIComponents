@@ -1,20 +1,20 @@
-package com.zkteam.ui.components.demo.viewpager
+package com.zkteam.ui.components.test
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.ColorUtils
 import com.zkteam.sdk.base.ZKBaseFragment
-import com.zkteam.ui.components.demo.R
-import kotlinx.android.synthetic.main.fragment_wq.*
+import com.zkteam.ui.components.R
+import kotlinx.android.synthetic.main.fragment_test.*
 
-class WQFragment: ZKBaseFragment() {
+class TestFragment: ZKBaseFragment() {
 
     companion object {
-        public const val FLAG_WQ_FRAGMENT_POSITION = "flag_wq_fragment_position"
+        const val FLAG_WQ_FRAGMENT_POSITION = "flag_wq_fragment_position"
 
-        fun create(position: Int) : WQFragment {
-            val fragment = WQFragment()
+        fun create(position: Int) : TestFragment {
+            val fragment = TestFragment()
             val args = Bundle()
             args.putInt(FLAG_WQ_FRAGMENT_POSITION, position)
             fragment.arguments = args
@@ -23,10 +23,10 @@ class WQFragment: ZKBaseFragment() {
 
     }
 
-    var position: Int = 0
+    private var position: Int = 0
 
     override fun getLayoutId(): Int {
-        return R.layout.fragment_wq
+        return R.layout.fragment_test
     }
 
     override fun initData(bundle: Bundle?) {
@@ -45,7 +45,7 @@ class WQFragment: ZKBaseFragment() {
 
     @SuppressLint("SetTextI18n")
     override fun initViews(contentView: View) {
-        tv.text = "内容：$position"
+        tv.text = "当前页面：$position"
         rl_bg.setBackgroundColor(ColorUtils.getRandomColor())
     }
 

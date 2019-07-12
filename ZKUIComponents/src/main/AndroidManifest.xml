@@ -8,43 +8,45 @@
 
     <application>
         <activity
-            android:name=".activity.EmptyActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"/>
+                android:name=".activity.WelcomeActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:launchMode="singleTop"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
         <activity
-            android:name=".activity.SplashActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+                android:name=".webview.ZKWebViewActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:launchMode="singleTop"/>
         <activity
-            android:name=".activity.WelcomeActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
-        <activity
-            android:name=".activity.TestActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".webview.ZKWebViewActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activity.SettingActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+                android:name=".activity.SettingActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:launchMode="singleTop"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
 
         <activity
-            android:name=".activity.AboutActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+                android:name=".test.TestViewPagerActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:launchMode="singleTop"/>
+
+        <activity
+                android:name=".activity.TestActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:launchMode="singleTop"/>
+
+        <activity
+                android:name=".activity.AboutActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:launchMode="singleTop"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+
+        <activity
+                android:name=".activity.SplashActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+                android:launchMode="singleTop"/>
+
+        <activity
+                android:name=".activity.EmptyActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:launchMode="singleTop"/>
     </application>
 </manifest>

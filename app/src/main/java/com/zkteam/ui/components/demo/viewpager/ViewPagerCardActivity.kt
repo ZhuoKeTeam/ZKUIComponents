@@ -10,15 +10,15 @@ import com.zkteam.ui.components.demo.R
 import com.zkteam.ui.components.demo.viewpager.cards.Card
 import com.zkteam.ui.components.demo.viewpager.cards.CardView
 import com.zkteam.ui.components.viewpager.ZKFragmentAdapter
-import kotlinx.android.synthetic.main.activity_view_pager.*
+import kotlinx.android.synthetic.main.activity_view_pager_card.*
 
 class ViewPagerCardActivity : ZKBaseActivity() {
     override fun getLayoutId(): Int {
-        return R.layout.activity_view_pager
+        return R.layout.activity_view_pager_card
     }
 
     override fun initData(bundle: Bundle?) {
-        vp_view.adapter = object : ZKFragmentAdapter(this) {
+        zkViewPager.viewPager.adapter = object : ZKFragmentAdapter(this) {
             override fun getItemCount(): Int {
                 return Card.DECK.size
             }

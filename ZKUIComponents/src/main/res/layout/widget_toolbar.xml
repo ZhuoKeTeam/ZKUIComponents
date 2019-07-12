@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:tag="title">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="41dp"
@@ -25,7 +25,7 @@
             android:textColor="@android:color/black"
             android:textSize="17sp"/>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <View
         android:id="@+id/line_bottom"

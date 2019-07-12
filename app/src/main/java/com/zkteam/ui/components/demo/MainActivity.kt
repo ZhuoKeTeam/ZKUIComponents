@@ -4,8 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.zkteam.sdk.ZKManager
-import com.zkteam.ui.components.demo.viewpager.ViewPagerActivity
+import com.zkteam.ui.components.activity.TestActivity
 import com.zkteam.ui.components.demo.viewpager.ViewPagerCardActivity
+import com.zkteam.ui.components.test.TestViewPagerActivity
 import com.zkteam.ui.components.webview.ZKWebViewActivity
 import com.zkteam.ui.components.widget.ScreenInfoDialog
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         ZKManager.instance.init(this.application)
 
         bt.setOnClickListener {
-//            startActivity(Intent(this, TestActivity::class.java))
+            startActivity(Intent(this, TestActivity::class.java))
         }
 
         bt1.setOnClickListener {
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bt4.setOnClickListener {
-            startActivity(Intent(this, ViewPagerActivity::class.java))
+            startActivity(Intent(this, TestViewPagerActivity::class.java))
         }
 
         bt5.setOnClickListener {
