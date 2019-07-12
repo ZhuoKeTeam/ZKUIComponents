@@ -78,6 +78,9 @@ private String[] permissions = new String[]{Manifest.permission.READ_PHONE_STATE
         zkViewPager.viewPager.setPageTransformer(ZKViewPagerTransformerAnimation(builder, zkViewPager.viewPager)) // builder 可以为空， 
         zkViewPager.setZKAnimationBuilder(builder) //添加动画的 builder
         zkViewPager.showZKAnimation(false)  //禁用动画效果，默认开启
+        
+        zkViewPager.setOrientation(ZKViewPager.VERTICAL) // 是否支持竖向滚动
+        
         zkViewPager.viewPager.adapter = object : ZKFragmentAdapter(this) {
             override fun getItemCount(): Int {
                 return 10                               //列表中 Fragment 的总数

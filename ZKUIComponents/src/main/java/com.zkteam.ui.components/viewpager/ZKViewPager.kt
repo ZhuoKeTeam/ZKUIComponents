@@ -8,6 +8,11 @@ import com.zkteam.ui.components.viewpager.animation.ZKViewPagerTransformerAnimat
 
 class ZKViewPager: RelativeLayout {
 
+    companion object {
+        const val HORIZONTAL = ViewPager2.ORIENTATION_HORIZONTAL
+        const val VERTICAL = ViewPager2.ORIENTATION_VERTICAL
+    }
+
     lateinit var viewPager: ViewPager2
     private var builder: ZKViewPagerTransformerAnimation.Builder? = null
     private var isShow: Boolean = true
@@ -45,6 +50,10 @@ class ZKViewPager: RelativeLayout {
     fun showZKAnimation(isShow: Boolean) {
         this.isShow = isShow
         initViewPager(viewPager)
+    }
+
+    fun setOrientation(orientation: Int) {
+        viewPager.orientation = orientation
     }
 
 }

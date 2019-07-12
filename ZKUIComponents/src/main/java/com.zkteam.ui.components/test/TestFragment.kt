@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.ColorUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.zkteam.sdk.base.ZKBaseFragment
 import com.zkteam.ui.components.R
 import kotlinx.android.synthetic.main.fragment_test.*
@@ -40,7 +41,9 @@ class TestFragment: ZKBaseFragment() {
     }
 
     override fun initListener() {
-        //function
+        tv.setOnClickListener {
+            ToastUtils.showShort(tv.text.toString())
+        }
     }
 
     @SuppressLint("SetTextI18n")
