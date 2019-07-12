@@ -38,3 +38,55 @@ private String[] permissions = new String[]{Manifest.permission.READ_PHONE_STATE
 ```
 
 **注意：权限同时需要在清单文件中声明**
+
+## 添加 ZKViewPager UI 组件
+
+1. 简单使用方式：
+
+添加布局：
+```
+        <com.zkteam.ui.components.viewpager.ZKViewPager
+            android:id="@+id/zkViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+```
+
+简单直接配置使用（默认有动画）：
+```
+        zkViewPager.viewPager.adapter = object : ZKFragmentAdapter(this) {
+            override fun getItemCount(): Int {
+                return 10
+            }
+
+            override fun createFragment(position: Int): Fragment {
+                return TestFragment.create(position)
+            }
+        }
+```
+
+
+2. 详细使用参数：
+
+```
+        val builder = ZKViewPagerTransformerAnimation.Builder()
+        builder.setTranslation(true)    // 支持翻转
+        builder.setTranslationX(100F)   // X 轴的翻转距离
+        builder.setTranslationY(100F)   // Y 轴的翻转距离
+        builder.setRotation(true)       // 支持旋转
+        builder.setRotationCircle(90F)  // 旋转的角度
+        builder.setScale(true)          // 支持缩放
+        zkViewPager.viewPager.setPageTransformer(ZKViewPagerTransformerAnimation(builder, zkViewPager.viewPager)) // builder 可以为空， 
+        zkViewPager.setZKAnimationBuilder(builder) //添加动画的 builder
+        zkViewPager.showZKAnimation(false)  //禁用动画效果，默认开启
+        zkViewPager.viewPager.adapter = object : ZKFragmentAdapter(this) {
+            override fun getItemCount(): Int {
+                return 10                               //列表中 Fragment 的总数
+            }
+
+            override fun createFragment(position: Int): Fragment {
+                return TestFragment.create(position)    //创建 Fragment
+            }
+        }
+```
+
+使用 builder 添加相关参数。
