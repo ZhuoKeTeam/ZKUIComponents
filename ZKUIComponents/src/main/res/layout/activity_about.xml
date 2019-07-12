@@ -112,7 +112,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="32dp"
-            android:text="Copyright 2019 © 渭南笑问网络科技有限公司"
+            android:text="Copyright 2019 © xlongren"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
