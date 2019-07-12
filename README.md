@@ -41,6 +41,8 @@ private String[] permissions = new String[]{Manifest.permission.READ_PHONE_STATE
 
 ## 添加 ZKViewPager UI 组件
 
+参考地址：https://github.com/googlesamples/android-viewpager2
+
 1. 简单使用方式：
 
 添加布局：
