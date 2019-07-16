@@ -27,7 +27,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.kotlin_stdlib8
 
-    api zkteam.zksdk
     api jetpack.viewpager2
+
+    api zkteam.zksdk
+    api zkteam.zk_image_loader
+
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
