@@ -11,19 +11,24 @@ import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.ui.components.R
 import kotlinx.android.synthetic.main.activity_welcome.*
 
-class WelcomeActivity: ZKBaseActivity() {
+open class ZKWelcomeActivity: ZKBaseActivity() {
 
-    private val ids = IntArray(4)
+    // 是否显示引导页面
+    private var isShow = true
+    // 默认进入的 Activity
+    private var mainActivity: Class<*> = EmptyActivity::class.java
+    val ids = mutableListOf(R.drawable.w1, R.drawable.w2, R.drawable.w3, R.drawable.w4)
 
     override fun getLayoutId(): Int {
         return R.layout.activity_welcome
     }
 
     override fun initData(bundle: Bundle?) {
-        ids[0] = R.drawable.w1
-        ids[1] = R.drawable.w2
-        ids[2] = R.drawable.w3
-        ids[3] = R.drawable.w4
+
+        if (ids.size <= 0 || !isShow) {
+            startMainActivity()
+            return
+        }
 
         zkViewPager.adapter = object : PagerAdapter() {
 
@@ -69,11 +74,26 @@ class WelcomeActivity: ZKBaseActivity() {
         })
 
         btnStart.setOnClickListener {
-            val intent = Intent(mContext, EmptyActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-            finish()
+            startMainActivity()
         }
+    }
+
+    fun showGuide(show: Boolean) {
+        isShow = show
+    }
+
+    /**
+     * 设置默认进入的 Activity
+     */
+    public fun setMainActivity(cls: Class<*>) {
+        mainActivity = cls
+    }
+
+    private fun startMainActivity() {
+        val intent = Intent(mContext, mainActivity)
+        startActivity(intent)
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+        finish()
     }
 
     override fun initLifecycleObserve() {

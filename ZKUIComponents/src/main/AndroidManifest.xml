@@ -8,7 +8,7 @@
 
     <application>
         <activity
-                android:name=".activity.WelcomeActivity"
+                android:name=".activity.ZKWelcomeActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:launchMode="singleTop"
                 android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>

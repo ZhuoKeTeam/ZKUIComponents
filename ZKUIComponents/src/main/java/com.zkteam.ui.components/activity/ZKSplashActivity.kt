@@ -11,17 +11,25 @@ import android.view.View
 import android.view.WindowManager
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import android.view.animation.AnimationSet
-import android.view.animation.TranslateAnimation
+import com.blankj.utilcode.util.AppUtils
+import com.blankj.utilcode.util.ColorUtils
 import com.blankj.utilcode.util.PermissionUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.sdk.exception.ZKSPException
 import com.zkteam.sdk.sp.ZKSharedPreferences
 import com.zkteam.ui.components.R
-import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.zk_activity_splash.*
 
-open class SplashActivity: ZKBaseActivity() {
+open class ZKSplashActivity : ZKBaseActivity(){
+
+    companion object {
+        private const val FIRST_START = "first_start"
+        private const val DELAY_TIME = 3000
+        private const val FLAG_ENTER_MAIN = 0
+    }
+
+    private var width: Int = 0
 
     private val permissions = arrayOf(
         Manifest.permission.READ_PHONE_STATE,
@@ -29,8 +37,9 @@ open class SplashActivity: ZKBaseActivity() {
         Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
 
-
-    private var width: Int = 0
+    // 默认进入的 Activity
+    private var mainActivity: Class<*> = EmptyActivity::class.java
+    private var welcomeActivity: Class<*> = ZKWelcomeActivity::class.java
 
     private val splashHandler = @SuppressLint("HandlerLeak")
     object : Handler() {
@@ -41,12 +50,12 @@ open class SplashActivity: ZKBaseActivity() {
                     val fistStart = sharedPreferences[FIRST_START, true] as Boolean
                     if (fistStart) {
                         sharedPreferences.put(FIRST_START, false)
-                        val intent = Intent(this@SplashActivity, ZKWelcomeActivity::class.java)
+                        val intent = Intent(applicationContext, welcomeActivity)
                         startActivity(intent)
                         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                         finish()
                     } else {
-                        val intent = Intent(baseContext, EmptyActivity::class.java)
+                        val intent = Intent(applicationContext, mainActivity)
                         startActivity(intent)
                         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                         finish()
@@ -59,6 +68,25 @@ open class SplashActivity: ZKBaseActivity() {
         }
     }
 
+    fun setNewActivity(mainCls: Class<*>, welcomeCls: Class<*>) {
+        setMainActivity(mainCls)
+        setWelcomeActivity(welcomeCls)
+    }
+
+    /**
+     * 设置默认进入的 Activity
+     */
+    fun setMainActivity(cls: Class<*>) {
+        mainActivity = cls
+    }
+
+    /**
+     * 设置默认进入的 引导页面的 Activity
+     */
+    fun setWelcomeActivity(cls: Class<*>) {
+        welcomeActivity = cls
+    }
+
     internal var sharedPreferences: ZKSharedPreferences = object : ZKSharedPreferences() {
 
         override fun sharedPreferencesFileName(): String {
@@ -67,11 +95,12 @@ open class SplashActivity: ZKBaseActivity() {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_splash
+        return R.layout.zk_activity_splash
     }
 
     override fun initData(bundle: Bundle?) {
-        //function
+        tv_app_version.text = "${AppUtils.getAppVersionCode()}"
+        tv_app_name.text = AppUtils.getAppName()
     }
 
     override fun initLifecycleObserve() {
@@ -83,6 +112,7 @@ open class SplashActivity: ZKBaseActivity() {
     }
 
     override fun initViews(contentView: View) {
+        rl_bg.setBackgroundColor(ColorUtils.getRandomColor())
         initAnimation()
     }
 
@@ -90,29 +120,11 @@ open class SplashActivity: ZKBaseActivity() {
         //function
     }
 
-
-    private fun initPermission() {
-        PermissionUtils.permission(*permissions)
-            .callback(object : PermissionUtils.FullCallback {
-                override fun onGranted(permissionsGranted: List<String>) {
-                    splashHandler.sendEmptyMessageDelayed(FLAG_ENTER_MAIN, DELAY_TIME.toLong())
-                }
-
-                override fun onDenied(permissionsDeniedForever: List<String>, permissionsDenied: List<String>) {
-                    ToastUtils.showShort(getString(R.string.question_permission_tip))
-                    splashHandler.sendEmptyMessageDelayed(FLAG_ENTER_MAIN, DELAY_TIME.toLong())
-                }
-            }).request()
-    }
-
     private fun initAnimation() {
         val wm = getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
         width = wm.defaultDisplay.width
-        btnTranslateLeft(img1, 500)
-        btnTranslateRight(img2, 1000)
-        btnTranslateLeft(img3, 1500)
-        btnAlpha(id_linear, 2000)
+        btnAlpha(ll_bottom, 2500)
     }
 
 
@@ -139,32 +151,18 @@ open class SplashActivity: ZKBaseActivity() {
         view.startAnimation(aa)
     }
 
+    private fun initPermission() {
+        PermissionUtils.permission(*permissions)
+            .callback(object : PermissionUtils.FullCallback {
+                override fun onGranted(permissionsGranted: List<String>) {
+                    splashHandler.sendEmptyMessageDelayed(FLAG_ENTER_MAIN, DELAY_TIME.toLong())
+                }
 
-    fun btnTranslateLeft(view: View, duration: Long) {
-        val `as` = AnimationSet(true)
-        `as`.duration = duration
-        val ta = TranslateAnimation(width.toFloat(), 0f, 0f, 0f)
-        ta.duration = duration
-        `as`.addAnimation(ta)
-        val aa = AlphaAnimation(0f, 1f)
-        //持续时间
-        aa.duration = duration
-        `as`.addAnimation(aa)
-        view.startAnimation(`as`)
-    }
-
-    fun btnTranslateRight(view: View, duration: Long) {
-
-        val `as` = AnimationSet(true)
-        `as`.duration = duration
-        val ta = TranslateAnimation((-width).toFloat(), 0f, 0f, 0f)
-        ta.duration = duration
-        `as`.addAnimation(ta)
-        val aa = AlphaAnimation(0f, 1f)
-        //持续时间
-        aa.duration = duration
-        `as`.addAnimation(aa)
-        view.startAnimation(`as`)
+                override fun onDenied(permissionsDeniedForever: List<String>, permissionsDenied: List<String>) {
+                    ToastUtils.showShort(getString(R.string.question_permission_tip))
+                    splashHandler.sendEmptyMessageDelayed(FLAG_ENTER_MAIN, DELAY_TIME.toLong())
+                }
+            }).request()
     }
 
     override fun onDestroy() {
@@ -172,9 +170,4 @@ open class SplashActivity: ZKBaseActivity() {
         super.onDestroy()
     }
 
-    companion object {
-        private const val FIRST_START = "first_start"
-        private const val DELAY_TIME = 3000
-        private const val FLAG_ENTER_MAIN = 0
-    }
 }
