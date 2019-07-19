@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -11,10 +12,7 @@ import android.view.View
 import android.view.WindowManager
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import com.blankj.utilcode.util.AppUtils
-import com.blankj.utilcode.util.ColorUtils
-import com.blankj.utilcode.util.PermissionUtils
-import com.blankj.utilcode.util.ToastUtils
+import com.blankj.utilcode.util.*
 import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.sdk.exception.ZKSPException
 import com.zkteam.sdk.sp.ZKSharedPreferences
@@ -98,9 +96,13 @@ open class ZKSplashActivity : ZKBaseActivity(){
         return R.layout.zk_activity_splash
     }
 
+    @SuppressLint("SetTextI18n")
     override fun initData(bundle: Bundle?) {
-        tv_app_version.text = "${AppUtils.getAppVersionCode()}"
+        tv_app_version.text = "v ${AppUtils.getAppVersionName()}"
         tv_app_name.text = AppUtils.getAppName()
+
+        BarUtils.setStatusBarColor(this, Color.TRANSPARENT)
+//        BarUtils.addMarginTopEqualStatusBarHeight(rl_bg)
     }
 
     override fun initLifecycleObserve() {

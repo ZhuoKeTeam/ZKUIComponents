@@ -10,4 +10,6 @@ class SplashActivity : ZKSplashActivity() {
         setNewActivity(MainActivity::class.java, WelcomeActivity::class.java)
     }
 
+
+
 }

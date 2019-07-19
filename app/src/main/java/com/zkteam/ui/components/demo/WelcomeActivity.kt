@@ -6,8 +6,8 @@ import com.zkteam.ui.components.activity.ZKWelcomeActivity
 class WelcomeActivity: ZKWelcomeActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         showGuide(false)
         setMainActivity(MainActivity::class.java)
+        super.onCreate(savedInstanceState)
     }
 }

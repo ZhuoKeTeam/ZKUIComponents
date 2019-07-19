@@ -67,7 +67,7 @@ class MainActivity : ZKBaseActivity() {
 
 
         BarUtils.setStatusBarColor(this, Color.TRANSPARENT)
-        BarUtils.addMarginTopEqualStatusBarHeight(launcherMainToolbar)
+//        BarUtils.addMarginTopEqualStatusBarHeight(launcherMainToolbar)
     }
 
     override fun onDebouncingClick(view: View) {
