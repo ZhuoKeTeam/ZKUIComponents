@@ -11,6 +11,39 @@
 
 做一些基础页面，后面会添加多套模板进行动态替换，可以有多种风格。
 
+## 使用默认的 UI 界面
+
+1. 自建 XXAplication (ZKUIApplication), 继承 ZKBaseApplication()， 并重写 onCreate 方法。
+
+```
+class ZKUIApplication : ZKBaseApplication() {
+
+    override fun onCreate() {
+        super.onCreate()
+        val zkUiManager = ZKUIManager.instance
+        zkUiManager.setShowGuide(false) // 设置不启用引导页面
+        zkUiManager.setMainActivity(MainActivity::class.java) // 设置进入的主页面
+    }
+}
+```
+
+2. 添加到 App 中的 AndroidManifest.xml 中
+
+```
+    <application
+            ...
+            android:name=".ZKUIApplication" // 添加 app 的 Application
+            ... >
+```
+
+3. 打开内置的 WebView 界面
+
+```
+    private fun startWebViewActivity(url: String) {
+        startActivity(Intent(this, ZKWebViewActivity::class.java)
+            .putExtra(ZKWebViewActivity.FLAG_ZK_UI_WEBVIEW_URL, url))
+    }
+```
 
 ## 显示屏幕相关信息的 Dialog
 
@@ -41,7 +74,7 @@ private String[] permissions = new String[]{Manifest.permission.READ_PHONE_STATE
 
 ## 添加 ZKViewPager UI 组件
 
-参考地址：https://github.com/googlesamples/android-viewpager2
+参考地址：<https://github.com/googlesamples/android-viewpager2>
 
 1. 简单使用方式：
 

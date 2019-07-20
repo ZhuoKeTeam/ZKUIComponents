@@ -9,14 +9,11 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.ui.components.R
+import com.zkteam.ui.components.ZKUIManager
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 open class ZKWelcomeActivity: ZKBaseActivity() {
 
-    // 是否显示引导页面
-    private var isShow = true
-    // 默认进入的 Activity
-    private var mainActivity: Class<*> = EmptyActivity::class.java
     val ids = mutableListOf(R.drawable.w1, R.drawable.w2, R.drawable.w3, R.drawable.w4)
 
     override fun getLayoutId(): Int {
@@ -25,7 +22,7 @@ open class ZKWelcomeActivity: ZKBaseActivity() {
 
     override fun initData(bundle: Bundle?) {
 
-        if (ids.size <= 0 || !isShow) {
+        if (ids.size <= 0 || !ZKUIManager.instance.getShowGuide()) {
             startMainActivity()
             return
         }
@@ -78,19 +75,8 @@ open class ZKWelcomeActivity: ZKBaseActivity() {
         }
     }
 
-    fun showGuide(show: Boolean) {
-        isShow = show
-    }
-
-    /**
-     * 设置默认进入的 Activity
-     */
-    public fun setMainActivity(cls: Class<*>) {
-        mainActivity = cls
-    }
-
     private fun startMainActivity() {
-        val intent = Intent(mContext, mainActivity)
+        val intent = Intent(mContext, ZKUIManager.instance.getMainActivity())
         startActivity(intent)
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         finish()

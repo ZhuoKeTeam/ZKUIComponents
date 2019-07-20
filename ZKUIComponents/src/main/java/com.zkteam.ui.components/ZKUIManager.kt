@@ -12,32 +12,24 @@ class ZKUIManager {
         }
     }
 
-    private var mainActivityClass: Class<*>? = null
-    private var welcomActivityClass: Class<*>? = null
     private var isShow: Boolean = false
+    private var mainActivityClass: Class<*> = EmptyActivity::class.java
+    private var welcomeActivityClass: Class<*> = DefaultWelcomeActivity::class.java
 
     fun setMainActivity(cls: Class<*>) {
         mainActivityClass = cls
     }
 
     fun getMainActivity(): Class<*> {
-        if (mainActivityClass == null) {
-            mainActivityClass = EmptyActivity::class.java
-        }
-
-        return mainActivityClass!!
+        return mainActivityClass
     }
 
     fun setWelcomeActivity(cls: Class<*>) {
-        welcomActivityClass = cls
+        welcomeActivityClass = cls
     }
 
     fun getWelcomeActivity(): Class<*> {
-        if (welcomActivityClass == null) {
-            welcomActivityClass = DefaultWelcomeActivity::class.java
-        }
-
-        return welcomActivityClass!!
+        return welcomeActivityClass
     }
 
     fun setShowGuide(show: Boolean) {
