@@ -45,6 +45,30 @@ class ZKUIApplication : ZKBaseApplication() {
     }
 ```
 
+4. 默认的 Fragment
+
+```
+TestFragment.create(0) // 创建默认的 Fragment，传入 int 参数。
+```
+
+5. 默认的 ViewPagerActivity
+
+```
+  startActivity(Intent(this, TestViewPagerActivity::class.java))
+```
+
+6. 测试数据
+
+```
+TestBeautyData.getNameForHLWHotWomen() // 好莱坞最火热的女明星
+TestBeautyData.getTop10HotWomenData() // 好莱坞最火热 Top10 的女明星
+
+TestShowNameData.getNameFor2019TVName() // 2019年的电视剧名字
+TestShowNameData.getNameForNovel() // 火热小说和作者名字
+TestShowNameData.getSceneryPic() // 最美的风景照 url
+TestShowNameData.getBigBeautyPic() // 清纯美女
+```
+
 ## 显示屏幕相关信息的 Dialog
 
 ```
