@@ -11,18 +11,20 @@
             android:supportsRtl="true"
             android:name=".ZKUIApplication"
             android:theme="@style/AppTheme"
-            tools:replace="android:name"
+            android:appComponentFactory=""
+            tools:replace="android:name,android:appComponentFactory"
             tools:ignore="GoogleAppIndexingWarning">
 
         <activity
                 android:name=".MainActivity"
                 android:label="@string/app_name">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--在 Activity 中默认添加了 MainActivity 作为入口。-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
 
         </activity>
         <activity android:name=".viewpager.ViewPagerCardActivity"/>
