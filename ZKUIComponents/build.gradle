@@ -31,7 +31,6 @@ dependencies {
 
     api zkteam.zksdk
     api zkteam.zk_image_loader
-    api deps.swipe_panel
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

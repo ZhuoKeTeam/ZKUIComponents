@@ -11,12 +11,20 @@
             android:supportsRtl="true"
             android:name=".ZKUIApplication"
             android:theme="@style/AppTheme"
+            tools:replace="android:name"
             tools:ignore="GoogleAppIndexingWarning">
 
         <activity
                 android:name=".MainActivity"
-                android:label="@string/app_name"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+                android:label="@string/app_name">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity>
         <activity android:name=".viewpager.ViewPagerCardActivity"/>
         <activity android:name=".ZKDrawerBaseActivity"/>
 
