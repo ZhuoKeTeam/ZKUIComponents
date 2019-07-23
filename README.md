@@ -1,7 +1,6 @@
 # ZKUIComponents
 [![](https://jitpack.io/v/ZhuoKeTeam/ZKUIComponents.svg)](https://jitpack.io/#ZhuoKeTeam/ZKUIComponents)
 
-## 说明
 
 这个项目的目的是为了将公用的 UI 组件封装到里面，例如：启动页面，关于我们等等。
 
@@ -10,6 +9,10 @@
 所以封装下来后，如果需要直接启动对应的 Activity，不需要就先放着，可以在需要的时候再使用。
 
 做一些基础页面，后面会添加多套模板进行动态替换，可以有多种风格。
+
+## 组件快速使用说明：
+
+[组件快速说明](https://github.com/ZhuoKeTeam/ZKComponentDocument)
 
 ## 使用默认的 UI 界面
 
