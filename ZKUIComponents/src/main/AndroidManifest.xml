@@ -11,7 +11,7 @@
                 android:name=".activity.ZKWelcomeActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:launchMode="singleTop"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+                android:theme="@style/AppThemeFull"/>
         <activity
                 android:name=".webview.ZKWebViewActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
@@ -20,7 +20,7 @@
                 android:name=".activity.SettingActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:launchMode="singleTop"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+                android:theme="@style/AppThemeFull"/>
 
         <activity
                 android:name=".test.TestViewPagerActivity"
@@ -36,21 +36,18 @@
                 android:name=".activity.AboutActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:launchMode="singleTop"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+                android:theme="@style/AppThemeFull"/>
 
         <activity
                 android:name=".activity.SplashActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+                android:theme="@style/AppThemeFull"
                 android:launchMode="singleTop"/>
 
         <activity
                 android:name=".activity.EmptyActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:launchMode="singleTop"/>
-
-
-
 
         <activity
                 android:name=".activity.DefaultSplashActivity"
@@ -62,6 +59,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DefaultWelcomeActivity"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+                  android:theme="@style/AppThemeFull"/>
     </application>
 </manifest>

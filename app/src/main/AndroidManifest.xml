@@ -11,8 +11,7 @@
             android:supportsRtl="true"
             android:name=".ZKUIApplication"
             android:theme="@style/AppTheme"
-            android:appComponentFactory=""
-            tools:replace="android:name,android:appComponentFactory"
+            tools:replace="android:name"
             tools:ignore="GoogleAppIndexingWarning">
 
         <activity
