@@ -17,7 +17,7 @@
                 android:id="@+id/launcherMainCtl"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:contentScrim="@color/colorPrimary"
+                app:contentScrim="@color/blue_dark_text"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <ImageView
