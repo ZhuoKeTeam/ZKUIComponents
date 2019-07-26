@@ -72,9 +72,7 @@ class MainActivity : ZKCommonDrawerActivity() {
         ZKImageLoader.instance.load(this, iv_pic, url)
 
 
-
-
-        BarUtils.setStatusBarColor(this, Color.TRANSPARENT)
+        BarUtils.setStatusBarColor4Drawer(mBaseDrawerRootLayout, launcherMainFakeStatusBar, Color.TRANSPARENT, false)
         BarUtils.addMarginTopEqualStatusBarHeight(launcherMainToolbar)
     }
 

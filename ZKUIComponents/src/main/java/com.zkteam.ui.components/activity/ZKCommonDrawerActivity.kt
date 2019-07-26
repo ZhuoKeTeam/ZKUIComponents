@@ -39,6 +39,10 @@ abstract class ZKCommonDrawerActivity : ZKBaseActivity() {
                         Intent(mContext, ZKWebViewActivity::class.java)
                             .putExtra(FLAG_ZK_UI_WEBVIEW_URL, urlBlog))
                 }
+                R.id.baseDrawerActionAbout -> {
+                    startActivity(
+                        Intent(mContext, AboutActivity::class.java))
+                }
             }
 
             return onDrawerItemClickListener(id)
