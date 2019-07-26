@@ -7,15 +7,23 @@ import android.view.View
 import com.blankj.utilcode.util.BarUtils
 import com.zkteam.image.loader.ZKImageLoader
 import com.zkteam.sdk.ZKManager
-import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.ui.components.activity.TestActivity
+import com.zkteam.ui.components.activity.ZKCommonDrawerActivity
 import com.zkteam.ui.components.demo.viewpager.ViewPagerCardActivity
 import com.zkteam.ui.components.test.TestViewPagerActivity
 import com.zkteam.ui.components.webview.ZKWebViewActivity
 import com.zkteam.ui.components.widget.ScreenInfoDialog
 import kotlinx.android.synthetic.main.activity_main1.*
 
-class MainActivity : ZKBaseActivity() {
+class MainActivity : ZKCommonDrawerActivity() {
+    override fun onDrawerItemClickListener(itemId: Int): Boolean {
+        return true
+    }
+
+    override fun setDrawerLayout(): Int {
+        return 0
+    }
+
     override fun getLayoutId(): Int {
         return R.layout.activity_main1
     }

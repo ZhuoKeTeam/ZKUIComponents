@@ -32,5 +32,7 @@ dependencies {
     api zkteam.zksdk
     api zkteam.zk_image_loader
 
+    api support.design
+
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
