@@ -36,7 +36,7 @@
                 android:name=".activity.AboutActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:launchMode="singleTop"
-                android:theme="@style/AppThemeFull"/>
+                android:theme="@style/AppTheme"/>
 
         <activity
                 android:name=".activity.SplashActivity"
