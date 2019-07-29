@@ -6,11 +6,8 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <com.zkteam.sdk.toolbar.ZKToolbar
-            android:id="@+id/toolbar_about"
-            android:layout_width="match_parent"
-                                      android:layout_height="wrap_content"
-                                      app:theme="@style/ZKToolbar.Style.Theme"/>
+
+    <include layout="@layout/zk_common_toolbar_layout"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -3,4 +3,6 @@
     <string name="question_permission_tip">获取权限失败</string>
     <string name="author">ZKTeam</string>
     <string name="demo_of_android_util_code">power by ZKTeam</string>
+    <string name="zk_ui_about_us">关于我们</string>
+    <string name="zk_ui_local_version">版本号: %s</string>
 </resources>

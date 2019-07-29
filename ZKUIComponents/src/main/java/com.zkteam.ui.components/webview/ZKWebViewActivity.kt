@@ -10,10 +10,12 @@ import android.os.Bundle
 import android.view.View
 import android.webkit.*
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.Toolbar
 import com.blankj.utilcode.util.ToastUtils
 import com.zkteam.sdk.ZKBase
 import com.zkteam.sdk.base.ZKBaseActivity
 import com.zkteam.ui.components.R
+import kotlinx.android.synthetic.main.zk_common_toolbar_layout.*
 import kotlinx.android.synthetic.main.zk_ui_webview.*
 
 class ZKWebViewActivity : ZKBaseActivity() {
@@ -28,6 +30,10 @@ class ZKWebViewActivity : ZKBaseActivity() {
 
     override fun getLayoutId(): Int {
         return R.layout.zk_ui_webview
+    }
+
+    override fun getToolbar(): Toolbar? {
+        return toolbar
     }
 
     override fun initData(bundle: Bundle?) {

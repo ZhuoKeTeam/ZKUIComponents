@@ -29,19 +29,7 @@ class ViewPagerCardActivity : ZKBaseActivity() {
         }
     }
 
-    override fun initLifecycleObserve() {
-        //function
-    }
-
-    override fun initListener() {
-        //function
-    }
-
     override fun initViews(contentView: View) {
-        //function
-    }
-
-    override fun onDebouncingClick(view: View) {
         //function
     }
 

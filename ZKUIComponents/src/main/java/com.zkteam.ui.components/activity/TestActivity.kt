@@ -16,10 +16,6 @@ class TestActivity : ZKBaseActivity() {
         //function
     }
 
-    override fun initLifecycleObserve() {
-        //function
-    }
-
     override fun initListener() {
         btn_splash.setOnClickListener {
             startActivity(Intent(this, SplashActivity::class.java))
@@ -27,10 +23,6 @@ class TestActivity : ZKBaseActivity() {
     }
 
     override fun initViews(contentView: View) {
-        //function
-    }
-
-    override fun onDebouncingClick(view: View) {
         //function
     }
 }
