@@ -174,7 +174,7 @@ open class SplashActivity: ZKBaseActivity() {
 
     companion object {
         //启动界面延迟进入时间
-        const val DELAY_TIME = 3000
+        public const val DELAY_TIME = 3000
 
         private const val FIRST_START = "first_start"
         private const val FLAG_ENTER_MAIN = 0
