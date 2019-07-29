@@ -26,5 +26,9 @@ class AboutActivity: ZKBaseActivity() {
         tv_app_name.text = AppUtils.getAppName()
         tv_version.text = String.format(Locale.CHINA,
             resources.getString(R.string.zk_ui_local_version), AppUtils.getAppVersionName())
+
+        tv_app_debug_state.text = String.format(Locale.CHINA, resources.getString(R.string.zk_ui_app_debug_state),
+            AppUtils.isAppDebug())
+
     }
 }

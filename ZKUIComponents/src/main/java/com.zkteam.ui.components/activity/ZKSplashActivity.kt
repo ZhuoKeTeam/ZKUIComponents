@@ -102,6 +102,12 @@ open class ZKSplashActivity : ZKBaseActivity(){
         tv_app_version.text = "v ${AppUtils.getAppVersionName()}"
         tv_app_name.text = AppUtils.getAppName()
 
+        if (AppUtils.isAppDebug()) {
+            tv_app_debug_state.visibility = View.VISIBLE
+        } else {
+            tv_app_debug_state.visibility = View.GONE
+        }
+
         BarUtils.setStatusBarColor(this, Color.TRANSPARENT)
 //        BarUtils.addMarginTopEqualStatusBarHeight(rl_bg)
     }

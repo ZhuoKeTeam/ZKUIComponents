@@ -5,4 +5,5 @@
     <string name="demo_of_android_util_code">power by ZKTeam</string>
     <string name="zk_ui_about_us">关于我们</string>
     <string name="zk_ui_local_version">版本号: %s</string>
+    <string name="zk_ui_app_debug_state">App is debug state == 【%s】!</string>
 </resources>
