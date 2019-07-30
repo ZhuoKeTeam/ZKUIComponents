@@ -29,7 +29,7 @@ dependencies {
     implementation deps.kotlin_stdlib8
 
 //    api zkteam.zksdk
-    api "com.github.ZhuoKeTeam:ZKSDK:1.1.5"
+    api "com.github.ZhuoKeTeam:ZKSDK:1.1.6"
 
     implementation project(path: ':ZKUIComponents')
 }
