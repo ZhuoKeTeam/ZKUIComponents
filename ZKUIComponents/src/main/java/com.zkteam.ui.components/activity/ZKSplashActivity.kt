@@ -24,6 +24,7 @@ open class ZKSplashActivity : ZKBaseActivity(){
     companion object {
         //启动界面延迟进入时间
         var DELAY_TIME = 3000
+        var DELAY_ANIMATION_TIME = DELAY_TIME
         private const val FIRST_START = "first_start"
         private const val FLAG_ENTER_MAIN = 0
     }
@@ -133,7 +134,7 @@ open class ZKSplashActivity : ZKBaseActivity(){
         val wm = getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
         width = wm.defaultDisplay.width
-        btnAlpha(ll_bottom, 2500)
+        btnAlpha(ll_bottom, DELAY_ANIMATION_TIME.toLong())
     }
 
 

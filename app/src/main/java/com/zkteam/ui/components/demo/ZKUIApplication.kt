@@ -9,6 +9,7 @@ class ZKUIApplication : ZKBaseApplication() {
     override fun onCreate() {
         super.onCreate()
         ZKSplashActivity.DELAY_TIME = 0
+        ZKSplashActivity.DELAY_ANIMATION_TIME = 0
         val zkUiManager = ZKUIManager.instance
         zkUiManager.setShowGuide(false)
         zkUiManager.setMainActivity(MainActivity::class.java)
