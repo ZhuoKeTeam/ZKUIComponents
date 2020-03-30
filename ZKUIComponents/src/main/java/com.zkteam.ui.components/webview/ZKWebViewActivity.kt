@@ -18,11 +18,11 @@ import com.zkteam.ui.components.R
 import kotlinx.android.synthetic.main.zk_common_toolbar_layout.*
 import kotlinx.android.synthetic.main.zk_ui_webview.*
 
-class ZKWebViewActivity : ZKBaseActivity() {
-    private var webView: WebView? = null
-    private lateinit var mWebSettings: WebSettings
+open class ZKWebViewActivity : ZKBaseActivity() {
+    var webView: WebView? = null
+    lateinit var mWebSettings: WebSettings
 
-    private var url: String? = "http://www.gdky005.com"
+    var url: String? = "http://www.gdky005.com"
 
     companion object {
         const val FLAG_ZK_UI_WEBVIEW_URL = "flag_zk_ui_webview_url"
