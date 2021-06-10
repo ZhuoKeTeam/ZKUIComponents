@@ -7,6 +7,7 @@ import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
 import android.webkit.*
 import androidx.annotation.RequiresApi
@@ -40,13 +41,15 @@ open class ZKWebViewActivity : ZKBaseActivity() {
         var newUrl = intent.getStringExtra(FLAG_ZK_UI_WEBVIEW_URL)
         initWebSettings(webView!!)
 
-        if (newUrl.isNotEmpty()) {
-            url = newUrl
-        } else {
-            ToastUtils.showShort("传入的 url 为空，默认展示 gdky005 网站")
-        }
+        if (!TextUtils.isEmpty(newUrl)) {
+            if (newUrl!!.isNotEmpty()) {
+                url = newUrl
+            } else {
+                ToastUtils.showShort("传入的 url 为空，默认展示 gdky005 网站")
+            }
 
-        webView!!.loadUrl(url)
+            webView!!.loadUrl(url!!)
+        }
     }
 
     private fun initWebSettings(webView: WebView) {

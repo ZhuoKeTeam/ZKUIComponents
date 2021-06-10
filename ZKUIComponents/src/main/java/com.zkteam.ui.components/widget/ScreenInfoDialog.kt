@@ -138,7 +138,7 @@ class ZKBaseDialog : AlertDialog.Builder {
         val mMessageView = dialog!!.findViewById<TextView>(android.R.id.message)
         val title = mTitleView!!.text.toString()
         val text = mMessageView!!.text.toString()
-        context.startActivity(Intent.createChooser(IntentUtils.getShareTextIntent(text, true), title))
+        context.startActivity(Intent.createChooser(IntentUtils.getShareTextIntent(text), title))
     }
 
 
@@ -151,7 +151,6 @@ class ZKBaseDialog : AlertDialog.Builder {
      */
     private fun copyText(title: String, content: String, context: Context) {
         val cmb = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clipData = ClipData.newPlainText(title, content)
-        cmb.primaryClip = clipData
+        ClipData.newPlainText(title, content).let { cmb.setPrimaryClip(it) }
     }
 }
